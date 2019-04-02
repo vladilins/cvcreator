@@ -8,7 +8,7 @@ import { NgForm } from "@angular/forms";
   styleUrls: ["./skills-create.component.css"]
 })
 export class SkillsCreateComponent {
-  newSkill = "";
+  newSkill = "No content";
 
   // constructor(public skillsService: SkillsService) {}
 
