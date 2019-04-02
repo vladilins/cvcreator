@@ -1,0 +1,22 @@
+<div class="container">
+  <form (submit)="onAddSkills()">
+    <div class="form-group">
+      <label>Skills</label>
+      <input
+        type="text"
+        name="skills"
+        minlength="2"
+        ngModel
+        required
+        class="form-control"
+        id="exampleInputskills1"
+        placeholder="Enter skills"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <p>
+    {{ newSkill }}
+  </p>
+</div>
