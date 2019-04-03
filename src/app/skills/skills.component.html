@@ -2,7 +2,9 @@
   <h1>Skills</h1>
   <ul class="list-group list-group-flush" *ngFor="let skill of skills">
     <li class="list-group-item">
-      {{ skill.title }}
+      {{ skill.title | uppercase }}
+      <button type="button" class="btn btn-success">Edit</button>
+      <button type="button" class="btn btn-danger">Delete</button>
     </li>
   </ul>
 </div>

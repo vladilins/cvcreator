@@ -1,4 +1,16 @@
+<div class="container" *ngIf="jobs.length > 0">
+  <h1>Experience</h1>
+  <ul class="list-group list-group-flush" *ngFor="let job of jobs">
+    <li class="list-group-item">
+      {{ job.title }}
+      <button type="button" class="btn btn-success">Edit</button>
+      <button type="button" class="btn btn-danger">Delete</button>
+    </li>
+  </ul>
+</div>
+<div class="container" *ngIf="jobs.length <= 0">No Experience added</div>
 <div class="container">
-    experience works!
-
+  <button (click)="goToJobsCreate()" class="btn btn-primary">
+    Add Skills
+  </button>
 </div>

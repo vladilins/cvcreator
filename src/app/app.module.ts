@@ -10,6 +10,10 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HomeComponent } from "./home/home.component";
 import { SkillsCreateComponent } from "./skills/skills-create/skills-create.component";
 import { FormsModule } from "@angular/forms";
+import { EducationCreateComponent } from "./education/education-create/education-create.component";
+
+import { CoursesCreateComponent } from "./education/courses-create/courses-create.component";
+import { ExperienceCreateComponent } from "./experience/experience-create/experience-create.component";
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { FormsModule } from "@angular/forms";
     SkillsComponent,
     ExperienceComponent,
     HomeComponent,
-    SkillsCreateComponent
+    SkillsCreateComponent,
+    EducationCreateComponent,
+
+    CoursesCreateComponent,
+    ExperienceCreateComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
