@@ -12,7 +12,6 @@ import { SkillsCreateComponent } from "./skills/skills-create/skills-create.comp
 import { FormsModule } from "@angular/forms";
 import { EducationCreateComponent } from "./education/education-create/education-create.component";
 
-import { CoursesCreateComponent } from "./education/courses-create/courses-create.component";
 import { ExperienceCreateComponent } from "./experience/experience-create/experience-create.component";
 
 @NgModule({
@@ -26,7 +25,6 @@ import { ExperienceCreateComponent } from "./experience/experience-create/experi
     SkillsCreateComponent,
     EducationCreateComponent,
 
-    CoursesCreateComponent,
     ExperienceCreateComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
