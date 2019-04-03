@@ -13,7 +13,9 @@
         placeholder="Enter skills"
       />
     </div>
-    <p class="alert alert-danger" *ngIf="title.invalid">Please add skills</p>
+    <p class="alert alert-danger" *ngIf="title.invalid && skillForm.touched">
+      Please add skills
+    </p>
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
