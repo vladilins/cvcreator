@@ -1,22 +1,24 @@
 import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
-// import { SkillsService } from "../skills.service";
+import { Skill } from "../skill.model";
+import { SkillsService } from "../skills.service";
 
 @Component({
-  selector: "app-post-create",
+  selector: "app-skills-create",
   templateUrl: "./skills-create.component.html",
   styleUrls: ["./skills-create.component.css"]
 })
 export class SkillsCreateComponent {
-  newSkill = "No content";
+  // newSkill = "No content";
 
-  // constructor(public skillsService: SkillsService) {}
+  constructor(public skillsService: SkillsService) {}
 
-  onAddSkills(form: NgForm) {
+  onAddSkill(form: NgForm) {
     if (form.invalid) {
       return;
     }
-    this.newSkill = "The new Skill";
+
+    this.skillsService.addSkill(form.value.title);
     form.resetForm();
   }
 }

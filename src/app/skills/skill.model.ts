@@ -1,3 +1,3 @@
 export interface Skill {
-  skill: string;
+  title: string;
 }
