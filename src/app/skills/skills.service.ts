@@ -20,8 +20,8 @@ export class SkillsService {
     return this.skillsUpdated.asObservable();
   }
 
-  addSkill(title: string, age: number) {
-    const skill: Skill = { title: title, age: age };
+  addSkill(title: string, age: number, id: string) {
+    const skill: Skill = { title: title, age: age, id: id };
     this.skills.push(skill);
     this.skillsUpdated.next([...this.skills]);
     // Add to local storage
