@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { ExperienceService } from "./experience.service";
 import { Router } from "@angular/router";
 import { Job } from "./experience.model";
-import { Subscription } from "rxjs";
 @Component({
   selector: "app-experience",
   templateUrl: "./experience.component.html",
@@ -49,7 +48,7 @@ export class ExperienceComponent implements OnInit {
     }
   }
 
-  goToExperienceCreate() {
+  goToJobCreate() {
     this.router.navigate(["/experience/create"]);
   }
 }

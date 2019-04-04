@@ -50,6 +50,7 @@ export class EducationService {
 
     // Add to local storage
     localStorage.setItem("educations", JSON.stringify(this.educations));
+    this.clearState();
   }
 
   updatEeducation(education: Education) {
@@ -62,6 +63,7 @@ export class EducationService {
 
     // Update local storage
     localStorage.setItem("educations", JSON.stringify(this.educations));
+    this.clearState();
   }
 
   deleteEducation(education: Education) {

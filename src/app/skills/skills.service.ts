@@ -8,6 +8,11 @@ export class SkillsService {
   private skillsUpdated = new Subject<Skill[]>();
 
   getSkills() {
+    if (localStorage.getItem("skills") === null) {
+      this.skills = [];
+    } else {
+      this.skills = JSON.parse(localStorage.getItem("skills"));
+    }
     return [...this.skills];
   }
 
@@ -19,5 +24,7 @@ export class SkillsService {
     const skill: Skill = { title: title, age: age };
     this.skills.push(skill);
     this.skillsUpdated.next([...this.skills]);
+    // Add to local storage
+    localStorage.setItem("skills", JSON.stringify(this.skills));
   }
 }

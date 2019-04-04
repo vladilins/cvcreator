@@ -1,11 +1,15 @@
 <div class="container">
+  <h4>Experience</h4>
   <ul class="list-group">
     <li
       *ngFor="let education of educations"
       [class.list-group-item-secondary]="selectedEducation === education"
       class="list-group-item d-flex justify-content-between align-items-center"
     >
-      <a (click)="onSelect(education)" href="#">{{ education.title }}</a>
+      <!-- <a (click)="onSelect(education)" href="#">{{ education.title }}</a> -->
+      <span>
+        {{ education.title }}
+      </span>
       <span>
         {{ education.type }}
       </span>
@@ -18,10 +22,17 @@
       <span>
         {{ education.about }}
       </span>
+      <a [routerLink]="['/education/create']" (click)="onSelect(education)"
+        >E</a
+      >
       <a (click)="onDelete(education)">X</a>
     </li>
   </ul>
-  <button (click)="goToEducationCreate()" class="btn btn-primary">
+  <a
+    [routerLink]="['/education/create']"
+    (click)="onClear()"
+    class="btn btn-primary"
+  >
     Add
-  </button>
+  </a>
 </div>

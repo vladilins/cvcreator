@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "education", component: EducationComponent },
   { path: "education/create", component: EducationCreateComponent },
-  { path: "education/:postId", component: EducationComponent },
+  { path: "education/create/:id", component: EducationCreateComponent },
   { path: "skills", component: SkillsComponent },
   { path: "skills/create", component: SkillsCreateComponent },
   { path: "skills/:postId", component: EducationComponent },

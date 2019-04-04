@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Education } from "./education.model";
 import { EducationService } from "./education.service";
 import { Router } from "@angular/router";
+import { formArrayNameProvider } from "@angular/forms/src/directives/reactive_directives/form_group_name";
 
 @Component({
   selector: "app-education",
@@ -36,6 +37,10 @@ export class EducationComponent implements OnInit {
       this.educations = educations;
       this.loaded = true;
     });
+  }
+
+  onClear() {
+    this.educationService.clearState();
   }
 
   onSelect(education: Education) {

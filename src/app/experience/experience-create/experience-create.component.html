@@ -5,35 +5,31 @@
       <input
         type="text"
         name="title"
-        minlength="2"
         [(ngModel)]="title"
         required
         class="form-control"
-        #title="ngModel"
         placeholder="Enter Job Title"
       />
     </div>
     <div class="form-group">
       <label>Time Start</label>
       <input
-        type="number"
+        type="date"
         name="timeStart"
         [(ngModel)]="timeStart"
         required
         class="form-control"
-        #timeStart="ngModel"
         placeholder="Enter Start Date"
       />
     </div>
     <div class="form-group">
       <label>Time End</label>
       <input
-        type="number"
+        type="date"
         name="timeEnd"
         [(ngModel)]="timeEnd"
         required
         class="form-control"
-        #timeEnd="ngModel"
         placeholder="Enter End Date"
       />
     </div>
@@ -43,10 +39,9 @@
         type="text"
         name="position"
         minlength="2"
-        [(ngModel)]="positioin"
+        [(ngModel)]="position"
         required
         class="form-control"
-        #positioin="ngModel"
         placeholder="Enter Your Position"
       />
     </div>
@@ -59,7 +54,6 @@
         [(ngModel)]="tasks"
         required
         class="form-control"
-        #tasks="ngModel"
         placeholder="Enter Your Tasks"
       />
     </div>
