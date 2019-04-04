@@ -1,12 +1,12 @@
 <div class="container">
-  <form (submit)="onAddJobs(jobForm)" #jobForm="ngForm">
+  <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label>Job</label>
       <input
         type="text"
         name="title"
         minlength="2"
-        ngModel
+        [(ngModel)]="title"
         required
         class="form-control"
         #title="ngModel"
@@ -18,7 +18,7 @@
       <input
         type="number"
         name="timeStart"
-        ngModel
+        [(ngModel)]="timeStart"
         required
         class="form-control"
         #timeStart="ngModel"
@@ -30,7 +30,7 @@
       <input
         type="number"
         name="timeEnd"
-        ngModel
+        [(ngModel)]="timeEnd"
         required
         class="form-control"
         #timeEnd="ngModel"
@@ -43,7 +43,7 @@
         type="text"
         name="position"
         minlength="2"
-        ngModel
+        [(ngModel)]="positioin"
         required
         class="form-control"
         #positioin="ngModel"
@@ -56,7 +56,7 @@
         type="text"
         name="tasks"
         minlength="2"
-        ngModel
+        [(ngModel)]="tasks"
         required
         class="form-control"
         #tasks="ngModel"

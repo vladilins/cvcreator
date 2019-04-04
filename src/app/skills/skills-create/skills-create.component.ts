@@ -36,7 +36,7 @@ export class SkillsCreateComponent implements OnInit {
       return;
     }
 
-    this.skillsService.addSkill(form.value.title);
+    this.skillsService.addSkill(form.value.title, form.value.age);
     form.resetForm();
   }
 }

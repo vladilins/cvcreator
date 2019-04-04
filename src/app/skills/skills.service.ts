@@ -15,8 +15,8 @@ export class SkillsService {
     return this.skillsUpdated.asObservable();
   }
 
-  addSkill(title: string) {
-    const skill: Skill = { title: title };
+  addSkill(title: string, age: number) {
+    const skill: Skill = { title: title, age: age };
     this.skills.push(skill);
     this.skillsUpdated.next([...this.skills]);
   }

@@ -1,53 +1,55 @@
-<form (ngSubmit)="onSubmit()">
-  <div class="form-group ">
-    <label>Title</label>
-    <input
-      type="text"
-      name="title"
-      class="form-control"
-      [(ngModel)]="title"
-      placeholder="Add Title"
-    />
-  </div>
-  <div class="form-group ">
-    <label>Type of Education</label>
-    <select class="form-control" [(ngModel)]="type" name="type">
-      <option>Formal Education</option>
-      <option>Courses</option>
-      <option>Certificates</option>
-    </select>
-  </div>
-  <div class="form-group ">
-    <label>Time Start</label>
-    <input
-      [(ngModel)]="timeStart"
-      name="timeStart"
-      type="date"
-      class="form-control"
-      placeholder="Add start of education"
-    />
-  </div>
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group ">
+      <label>Title</label>
+      <input
+        type="text"
+        name="title"
+        class="form-control"
+        [(ngModel)]="title"
+        placeholder="Add Title"
+      />
+    </div>
+    <div class="form-group ">
+      <label>Type of Education</label>
+      <select class="form-control" [(ngModel)]="type" name="type">
+        <option>Formal Education</option>
+        <option>Courses</option>
+        <option>Certificates</option>
+      </select>
+    </div>
+    <div class="form-group ">
+      <label>Time Start</label>
+      <input
+        [(ngModel)]="timeStart"
+        name="timeStart"
+        type="date"
+        class="form-control"
+        placeholder="Add start of education"
+      />
+    </div>
 
-  <div class="form-group ">
-    <label>Time End</label>
-    <input
-      [(ngModel)]="timeEnd"
-      name="timeEnd"
-      type="date"
-      class="form-control"
-      placeholder="Add end of education"
-    />
-  </div>
+    <div class="form-group ">
+      <label>Time End</label>
+      <input
+        [(ngModel)]="timeEnd"
+        name="timeEnd"
+        type="date"
+        class="form-control"
+        placeholder="Add end of education"
+      />
+    </div>
 
-  <div class="form-group">
-    <label>About</label>
-    <textarea
-      [(ngModel)]="about"
-      name="about"
-      class="form-control"
-      rows="3"
-    ></textarea>
-  </div>
+    <div class="form-group">
+      <label>About</label>
+      <textarea
+        [(ngModel)]="about"
+        name="about"
+        class="form-control"
+        rows="3"
+      ></textarea>
+    </div>
 
-  <button type="submit" class="btn btn-primary">Add</button>
-</form>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

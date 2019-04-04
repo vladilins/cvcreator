@@ -1,5 +1,4 @@
 <div class="container">
-  <app-education-create></app-education-create>
   <ul class="list-group">
     <li
       *ngFor="let education of educations"
@@ -22,4 +21,7 @@
       <a (click)="onDelete(education)">X</a>
     </li>
   </ul>
+  <button (click)="goToEducationCreate()" class="btn btn-primary">
+    Add
+  </button>
 </div>

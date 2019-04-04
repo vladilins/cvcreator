@@ -7,10 +7,12 @@ import { SkillsComponent } from "./skills/skills.component";
 import { ExperienceComponent } from "./experience/experience.component";
 import { SkillsCreateComponent } from "./skills/skills-create/skills-create.component";
 import { ExperienceCreateComponent } from "./experience/experience-create/experience-create.component";
+import { EducationCreateComponent } from "./education/education-create/education-create.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "education", component: EducationComponent },
+  { path: "education/create", component: EducationCreateComponent },
   { path: "education/:postId", component: EducationComponent },
   { path: "skills", component: SkillsComponent },
   { path: "skills/create", component: SkillsCreateComponent },
