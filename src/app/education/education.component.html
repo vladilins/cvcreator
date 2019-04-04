@@ -1,4 +1,25 @@
 <div class="container">
   <app-education-create></app-education-create>
-  education works!
+  <ul class="list-group">
+    <li
+      *ngFor="let education of educations"
+      [class.list-group-item-secondary]="selectedEducation === education"
+      class="list-group-item d-flex justify-content-between align-items-center"
+    >
+      <a (click)="onSelect(education)" href="#">{{ education.title }}</a>
+      <span>
+        {{ education.type }}
+      </span>
+      <span class="education-date">{{
+        education.timeStart | date: "longDate"
+      }}</span>
+      <span class="education-date">{{
+        education.timeEnd | date: "longDate"
+      }}</span>
+      <span>
+        {{ education.about }}
+      </span>
+      <a (click)="onDelete(education)">X</a>
+    </li>
+  </ul>
 </div>

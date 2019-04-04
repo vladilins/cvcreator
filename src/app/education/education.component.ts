@@ -1,15 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { Education } from "./education.model";
+import { EducationService } from "./education.service";
 
 @Component({
-  selector: 'app-education',
-  templateUrl: './education.component.html',
-  styleUrls: ['./education.component.css']
+  selector: "app-education",
+  templateUrl: "./education.component.html",
+  styleUrls: ["./education.component.css"]
 })
 export class EducationComponent implements OnInit {
+  educations: Education[];
+  selectedEducation: Education;
+  loaded: boolean = false;
 
-  constructor() { }
+  constructor(private educationService: EducationService) {}
 
   ngOnInit() {
+    this.educationService.stateClear.subscribe(clear => {
+      if (clear) {
+        this.selectedEducation = {
+          id: "",
+          title: "",
+          type: "",
+          timeEnd: null,
+          timeStart: null,
+          about: ""
+        };
+      }
+    });
+
+    this.educationService.getEducations().subscribe(educations => {
+      this.educations = educations;
+      this.loaded = true;
+    });
   }
 
+  onSelect(education: Education) {
+    this.educationService.setFormEducation(education);
+    this.selectedEducation = education;
+  }
+
+  onDelete(education: Education) {
+    if (confirm("Are you sure?")) {
+      this.educationService.deleteEducation(education);
+    }
+  }
 }
