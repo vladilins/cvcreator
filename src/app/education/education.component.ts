@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Education } from "./education.model";
 import { EducationService } from "./education.service";
 import { Router } from "@angular/router";
-import { formArrayNameProvider } from "@angular/forms/src/directives/reactive_directives/form_group_name";
+
 import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({

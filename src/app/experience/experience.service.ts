@@ -44,6 +44,7 @@ export class ExperienceService {
 
     // Add to local storage
     localStorage.setItem("jobs", JSON.stringify(this.jobs));
+    this.clearState();
   }
 
   updateJob(job: Job) {
@@ -56,6 +57,7 @@ export class ExperienceService {
 
     // Update local storage
     localStorage.setItem("jobs", JSON.stringify(this.jobs));
+    this.clearState();
   }
 
   deleteJob(job: Job) {

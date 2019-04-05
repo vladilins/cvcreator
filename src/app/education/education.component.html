@@ -11,39 +11,6 @@
     </button>
   </div>
   <app-education-create></app-education-create>
-  <!-- <div class="modal-body">
-    <form>
-      <div class="form-group">
-        <label for="dateOfBirth">Date of birth</label>
-        <div class="input-group">
-          <input
-            id="dateOfBirth"
-            class="form-control"
-            placeholder="yyyy-mm-dd"
-            name="dp"
-            ngbDatepicker
-            #dp="ngbDatepicker"
-          />
-          <div class="input-group-append">
-            <button
-              class="btn btn-outline-secondary calendar"
-              (click)="dp.toggle()"
-              type="button"
-            ></button>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn btn-outline-dark"
-      (click)="modal.close('Save click')"
-    >
-      Save
-    </button>
-  </div> -->
 </ng-template>
 
 <div class="container">
@@ -55,7 +22,6 @@
       [class.list-group-item-secondary]="selectedEducation === education"
       class="list-group-item d-flex justify-content-between align-items-center"
     >
-      <!-- <a (click)="onSelect(education)" href="#">{{ education.title }}</a> -->
       <span>
         {{ education.title }}
       </span>
@@ -80,14 +46,12 @@
       <a (click)="onDelete(education)">X</a>
     </li>
   </ul>
-  <!-- <a
-    routerLink="/education/create"
+
+  <button
+    class="btn btn-lg btn-outline-primary"
+    (click)="open(content)"
     (click)="onSelect()"
-    class="btn btn-primary"
   >
-    Add
-  </a> -->
-  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">
     Add
   </button>
 </div>

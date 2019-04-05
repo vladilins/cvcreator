@@ -2,6 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { ExperienceService } from "./experience.service";
 import { Router } from "@angular/router";
 import { Job } from "./experience.model";
+
+import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
+
 @Component({
   selector: "app-experience",
   templateUrl: "./experience.component.html",
@@ -12,9 +15,12 @@ export class ExperienceComponent implements OnInit {
   selectedExperience: Job;
   loaded: boolean = false;
 
+  closeResult: string;
+
   constructor(
     private experienceService: ExperienceService,
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal
   ) {}
 
   ngOnInit() {
@@ -50,5 +56,28 @@ export class ExperienceComponent implements OnInit {
 
   goToJobCreate() {
     this.router.navigate(["/experience/create"]);
+  }
+
+  open(content) {
+    this.modalService
+      .open(content, { ariaLabelledBy: "modal-basic-title" })
+      .result.then(
+        result => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        reason => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return "by pressing ESC";
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return "by clicking on a backdrop";
+    } else {
+      return `with: ${reason}`;
+    }
   }
 }
