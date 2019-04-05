@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
@@ -27,7 +28,7 @@ import { ExperienceCreateComponent } from "./experience/experience-create/experi
 
     ExperienceCreateComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent]
 })

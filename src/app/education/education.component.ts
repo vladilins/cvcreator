@@ -3,6 +3,7 @@ import { Education } from "./education.model";
 import { EducationService } from "./education.service";
 import { Router } from "@angular/router";
 import { formArrayNameProvider } from "@angular/forms/src/directives/reactive_directives/form_group_name";
+import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: "app-education",
@@ -14,9 +15,12 @@ export class EducationComponent implements OnInit {
   selectedEducation: Education;
   loaded: boolean = false;
 
+  closeResult: string;
+
   constructor(
     private educationService: EducationService,
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal
   ) {}
 
   ngOnInit() {
@@ -56,5 +60,28 @@ export class EducationComponent implements OnInit {
 
   goToEducationCreate() {
     this.router.navigate(["/education/create"]);
+  }
+
+  open(content) {
+    this.modalService
+      .open(content, { ariaLabelledBy: "modal-basic-title" })
+      .result.then(
+        result => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        reason => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return "by pressing ESC";
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return "by clicking on a backdrop";
+    } else {
+      return `with: ${reason}`;
+    }
   }
 }
